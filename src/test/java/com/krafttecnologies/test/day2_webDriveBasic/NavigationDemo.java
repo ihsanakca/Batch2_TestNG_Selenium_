@@ -4,7 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class navigationDemo {
+public class NavigationDemo {
     public static void main(String[] args) throws InterruptedException {
         //go to google- google a git
         //go to facebook- facebook a git...
@@ -37,6 +37,8 @@ public class navigationDemo {
         Thread.sleep(3000);
 
         driver.navigate().refresh();
+
+        driver.quit();
 
     }
 }
