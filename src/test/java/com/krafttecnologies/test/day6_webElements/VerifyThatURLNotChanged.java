@@ -34,6 +34,7 @@ public class VerifyThatURLNotChanged {
        }
 
        Thread.sleep(1000);
+        System.out.println("şşş");
        driver.close();
 
 

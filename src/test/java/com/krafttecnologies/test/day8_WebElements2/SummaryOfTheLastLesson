@@ -1,0 +1,44 @@
+TestNG nedir?
+Unit test yapılan bir frame work.
+Testlerimizi toplu veya opsiyonel test etmemize yardımcı olur.
+Assertions yapmamıza imkan verir.
+Raporlama yapmamıza imkan verir.
+Verify yapmamıza imkan tanır.
+Bir class içerisinde birden fazla test yapabiliriz. Main olmadığı için...
+
+Assertions
+++assertTrue()--> boolean değer döndürür. condition true ise true döndürür..
+
+++assertFals()-->boolean değer döndürür. condition yanlış ise true döner...
+
+assertEquals()-->İki değerin eşitliğini kontral eder...
+
+assertion fail olduğunda test execution durur, devam etmez. Buna Hard assert denir.Aynı test annotationın altında
+test devam etmez ama diğer annotationlar devam eder...
+
+
+Annotations
+
+@Test
+Bu annotation altında test edilecek bir metot olduğunu, assert edilebileceğini gösterir.
+
+@BeforeMethod
+Test edilecek her metottan önce bir defa çalışan metottur.
+
+@AfterMethod
+Test edilecek her metottan sonra bir defa çalışan metottur.
+
+@BeforeClass
+Test edilecek bütün metottan önce bir defa çalışan metottur.(sadece 1 kez)
+
+@AfterClass
+Test edilecek bütün metottan önce bir defa çalışan metottur.(sadece 1 kez)
+
+@BeforeSuit
+Tüm test edilecek tüm classlara ait testlerden önce çalışır..
+
+@AfterSuit
+Tüm test edilecek tüm classlara ait testlerden sonra çalışır..
+
+@Ignore
+Test edilmesi istenilmeyen test için kulllanılır....
