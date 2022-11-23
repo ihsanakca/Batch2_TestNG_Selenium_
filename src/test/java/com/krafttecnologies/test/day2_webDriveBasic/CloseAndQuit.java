@@ -1,6 +1,8 @@
 package com.krafttecnologies.test.day2_webDriveBasic;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -20,8 +22,15 @@ public class CloseAndQuit {
 
         driver.get("https://www.facebook.com/");
 
-        driver.quit();//bütün tabları kapatır. sadece current ı değil...
+        System.out.println("driver.manage().window().getSize() = " + driver.manage().window().getSize());
+        System.out.println("driver.manage().window().getPosition() = " + driver.manage().window().getPosition());
 
-        System.out.println("ışık");
+        driver.manage().window().setPosition(new Point(15,15));
+
+        driver.manage().window().setSize(new Dimension(900,600));
+
+//        driver.quit();//bütün tabları kapatır. sadece current ı değil...
+
+
     }
 }
