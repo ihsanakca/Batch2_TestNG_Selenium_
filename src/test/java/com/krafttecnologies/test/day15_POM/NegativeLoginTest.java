@@ -3,8 +3,6 @@ package com.krafttecnologies.test.day15_POM;
 import com.krafttecnologies.pages.LoginPages;
 import com.krafttecnologies.test.TestBase;
 import com.krafttecnologies.utilities.ConfigurationReader;
-import com.krafttecnologies.utilities.Driver;
-import com.krafttecnologies.utilities.WebDriverFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +14,7 @@ public class NegativeLoginTest extends TestBase {
         driver.get(ConfigurationReader.get("url"));
 //        LoginPages loginPages = new LoginPages();
 
-        loginPages.userNameInput_loc.sendKeys(ConfigurationReader.get("username"));
+        loginPages.userEmailInput_loc.sendKeys(ConfigurationReader.get("userEmail"));
         loginPages.passwordInput_loc.sendKeys("somepass");
         loginPages.submitButton_loc.click();
 
@@ -44,7 +42,7 @@ public class NegativeLoginTest extends TestBase {
         driver.get(ConfigurationReader.get("url"));
 //        LoginPages loginPages = new LoginPages();
 
-        loginPages.userNameInput_loc.sendKeys("ggg");
+        loginPages.userEmailInput_loc.sendKeys("ggg");
         loginPages.passwordInput_loc.sendKeys(ConfigurationReader.get("password"));
         loginPages.submitButton_loc.click();
 

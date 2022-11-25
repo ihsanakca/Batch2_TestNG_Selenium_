@@ -14,7 +14,7 @@ public class LoginPages extends BasePage{
     }
 
     @FindBy(name = "email")
-    public WebElement userNameInput_loc;
+    public WebElement userEmailInput_loc;
 
     @FindBy(name = "password")
     public WebElement passwordInput_loc;
@@ -26,10 +26,10 @@ public class LoginPages extends BasePage{
     public WebElement warningMessage_loc;
 
     public void loginUser(){
-        String username= ConfigurationReader.get("username");
+        String username= ConfigurationReader.get("userEmail");
         String password= ConfigurationReader.get("password");
 
-        userNameInput_loc.sendKeys(username);
+        userEmailInput_loc.sendKeys(username);
         passwordInput_loc.sendKeys(password);
         submitButton_loc.click();
     }

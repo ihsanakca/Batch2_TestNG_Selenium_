@@ -33,10 +33,10 @@ public class DasboardPage extends BasePage{
     public WebElement isaUser_loc;
 
     @FindBy(xpath = "//span[.='JavaScript']")
-    public WebElement javaScript_loc;
+    public WebElement tabLocator_loc;
 
     @FindBy(xpath = "//span[.='Modal']")
-    public WebElement modal_loc;
+    public WebElement moduleLocator_loc;
 
 
 
