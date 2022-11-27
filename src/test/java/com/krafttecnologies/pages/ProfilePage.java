@@ -63,6 +63,9 @@ public class ProfilePage extends BasePage{
     @FindBy (xpath = "//div[@class='alert alert-success bg-success text-light border-0 alert-dismissible fade show']")
     public WebElement profileUpdate;
 
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement profileEmail_loc;
+
 
 
     public void profileTabs(String tab){
