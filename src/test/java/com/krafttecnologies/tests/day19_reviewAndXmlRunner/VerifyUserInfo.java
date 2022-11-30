@@ -5,6 +5,7 @@ import com.krafttecnologies.pages.LoginPages;
 import com.krafttecnologies.pages.ProfilePage;
 import com.krafttecnologies.tests.TestBase;
 import com.krafttecnologies.utilities.BrowserUtils;
+import com.krafttecnologies.utilities.ConfigurationReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,6 +25,7 @@ public class VerifyUserInfo extends TestBase {
          * Verify that Dashboard page with url
          *
          */
+       // driver.get(ConfigurationReader.get("url"));
         extentLogger=report.createTest("My Profile Test1");
 
         LoginPages loginPages=new LoginPages();

@@ -38,6 +38,9 @@ public class DasboardPage extends BasePage{
     @FindBy(xpath = "//span[.='Modal']")
     public WebElement moduleLocator_loc;
 
+    @FindBy(xpath = "//a[@class='nav-link nav-profile d-flex align-items-center pe-0']")
+    public WebElement getUserName_loc;
+
 
 
     public String dashboardPageTitle(String title){
@@ -55,6 +58,11 @@ public class DasboardPage extends BasePage{
         String actualName=UserName.getText();
 
         return actualName;
+    }
+
+    public String getUserName(){
+        BrowserUtils.waitForVisibility(getUserName_loc,5);
+        return getUserName_loc.getText();
     }
 
 }

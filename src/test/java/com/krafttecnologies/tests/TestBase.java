@@ -16,8 +16,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -37,9 +35,9 @@ public class TestBase {
 
         //create a report path
         String projectPath = System.getProperty("user.dir");
-//        String reportPath = projectPath + "/test-output/report.html";
-        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String reportPath=projectPath + "/test-output/report"+date+".html";
+        String reportPath = projectPath + "/test-output/report.html";
+//        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+//        String reportPath=projectPath + "/test-output/report"+date+".html";
 
         //initialize the HTML report with the report path
         htmlReporter = new ExtentHtmlReporter(reportPath);
@@ -62,7 +60,7 @@ public class TestBase {
     public void tearDownTest() {
         //this is when the report is actually created
         report.flush();
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
     @BeforeMethod
@@ -79,20 +77,20 @@ public class TestBase {
     @AfterMethod  //@AfterMethod u @AfterClass yapınca hata gitti...
     public void tearDown(ITestResult result) throws IOException {
 // If test fails
-        if (result.getStatus()==ITestResult.FAILURE){
+        if (result.getStatus() == ITestResult.FAILURE) {
 
             //Record the name of failed test
             extentLogger.fail(result.getName());
             //Take the screenshot and return the location of screenshot
-            String screenShotPath= BrowserUtils.getScreenshot(result.getName());
+            String screenShotPath = BrowserUtils.getScreenshot(result.getName());
             //add screenshot to the report
             extentLogger.addScreenCaptureFromPath(screenShotPath);
             //capture the exception and put inside to the report
             extentLogger.fail(result.getThrowable());
         }
 //        driver.quit();
-   //    Driver.closeDriver();
-  //      driver.close();
+      Driver.closeDriver();
+//        driver.close();
     }
 
 }
