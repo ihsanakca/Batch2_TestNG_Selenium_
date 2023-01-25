@@ -1,5 +1,11 @@
 package com.krafttecnologies.utilities;
 
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.LuminanceSource;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.Result;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
+import com.google.zxing.common.HybridBinarizer;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -8,8 +14,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -410,6 +420,16 @@ public class BrowserUtils {
     public static void waitForPresenceOfElement(By by, long time) {
         new WebDriverWait(Driver.get(), time).until(ExpectedConditions.presenceOfElementLocated(by));
     }
+    public static void setWindowDimesion(int width, int height){
+        Driver.get().manage().window().setSize(new Dimension(width,height));
+//        Dimension dimension = new Dimension(width, height);
+//        Driver.get().manage().window().setSize(dimension);
+    }
+    public static void setWindowPoint(int x, int y){
+        Driver.get().manage().window().setPosition(new Point(x,y));
+    }
+
+
 
 }
 

@@ -1,6 +1,6 @@
 package com.krafttecnologies.tests.day14_PropertiesAndSingleton;
 
-import com.krafttecnologies.pages.DasboardPage;
+import com.krafttecnologies.pages.DashboardPage;
 import com.krafttecnologies.pages.LoginPages;
 import com.krafttecnologies.tests.TestBase;
 import com.krafttecnologies.utilities.ConfigurationReader;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class LoginTest extends TestBase {
 
     LoginPages loginPages=new LoginPages();
-    DasboardPage dasboardPage=new DasboardPage();
+    DashboardPage dasboardPage=new DashboardPage();
 //    WebDriver driver;//buna gerek var mı?
     @Test
     public void openBrowserUsingConfigurationReader(){

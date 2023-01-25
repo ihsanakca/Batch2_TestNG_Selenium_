@@ -1,6 +1,6 @@
 package com.krafttecnologies.tests.day16_POM1;
 
-import com.krafttecnologies.pages.DasboardPage;
+import com.krafttecnologies.pages.DashboardPage;
 import com.krafttecnologies.pages.LoginPages;
 import com.krafttecnologies.tests.TestBase;
 import com.krafttecnologies.utilities.BrowserUtils;
@@ -11,7 +11,7 @@ public class DashboardTests extends TestBase {
 
     LoginPages loginPages=new LoginPages();
 
-    DasboardPage dasboardPage=new DasboardPage();
+    DashboardPage dasboardPage=new DashboardPage();
 
     @Test
     public void navigateToTabAndModule() throws InterruptedException {

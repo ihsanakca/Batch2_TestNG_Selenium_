@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class DasboardPage extends BasePage{
+public class DashboardPage extends BasePage{
 
     @FindBy(xpath = "//h1[.='Dashboard']")
     public WebElement dashboardPageTitle_loc;

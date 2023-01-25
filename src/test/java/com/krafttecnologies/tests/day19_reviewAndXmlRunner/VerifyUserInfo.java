@@ -1,11 +1,10 @@
 package com.krafttecnologies.tests.day19_reviewAndXmlRunner;
 
-import com.krafttecnologies.pages.DasboardPage;
+import com.krafttecnologies.pages.DashboardPage;
 import com.krafttecnologies.pages.LoginPages;
 import com.krafttecnologies.pages.ProfilePage;
 import com.krafttecnologies.tests.TestBase;
 import com.krafttecnologies.utilities.BrowserUtils;
-import com.krafttecnologies.utilities.ConfigurationReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -29,7 +28,7 @@ public class VerifyUserInfo extends TestBase {
         extentLogger=report.createTest("My Profile Test1");
 
         LoginPages loginPages=new LoginPages();
-        DasboardPage dasboardPage=new DasboardPage();
+        DashboardPage dasboardPage=new DashboardPage();
         ProfilePage profilePage=new ProfilePage();
 
         extentLogger.info("Go to URL:https://www.krafttechexlab.com/login");

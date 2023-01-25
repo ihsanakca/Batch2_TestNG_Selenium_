@@ -27,7 +27,7 @@ public class CloseAndQuit {
 
         driver.manage().window().setPosition(new Point(15,15));
 
-        driver.manage().window().setSize(new Dimension(900,600));
+        driver.manage().window().setSize(new Dimension(600,600));
 
 //        driver.quit();//bütün tabları kapatır. sadece current ı değil...
 
