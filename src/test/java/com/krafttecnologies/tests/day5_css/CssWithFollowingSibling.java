@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CssWithFollowingCibling {
+public class CssWithFollowingSibling {
     public static void main(String[] args) {
         WebDriver driver = WebDriverFactory.getDriver("edge");
         driver.get("http://www.krafttechexlab.com/");

@@ -14,28 +14,25 @@ public class WebDriverFactory {
     //name of method : getDriver
 
 
+    public static WebDriver getDriver(String browserType) {
+        WebDriver driver = null;
 
-
-    public static WebDriver getDriver(String browserType){
-        WebDriver driver=null;
-
-        switch (browserType.toLowerCase()){
+        switch (browserType.toLowerCase()) {
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
-                driver=new FirefoxDriver();
+                driver = new FirefoxDriver();
                 break;
             case "edge":
                 WebDriverManager.edgedriver().setup();
-                driver= new EdgeDriver();
+                driver = new EdgeDriver();
                 break;
             case "chrome":
                 WebDriverManager.chromedriver().setup();
-                driver=new ChromeDriver();
+                driver = new ChromeDriver();
                 break;
         }
 
         return driver;
     }
-
 
 }

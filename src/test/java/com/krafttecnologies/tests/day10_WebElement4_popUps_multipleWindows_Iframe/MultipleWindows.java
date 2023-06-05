@@ -75,7 +75,9 @@ public class MultipleWindows {
 //            if (driver.getCurrentUrl().equals("https://the-internet.herokuapp.com/windows/new"))
             {
                 //stop loop
-                break;
+              break;
+
+
             }
 
         }

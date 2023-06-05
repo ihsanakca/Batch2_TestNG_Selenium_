@@ -4,8 +4,8 @@
 <suite name="Krafttech Automation" verbose="1">
     <test name="Krafttech Smoke Test">
         <classes>
-            <class name="com.krafttecnologies.tests.day20_DataDrivenFramework.DDFLoginTest"></class>
-            <class name="com.krafttecnologies.tests.day20_DataDrivenFramework.DDFLoginTest_2"></class>
+            <class name="com.krafttecnologies.tests.day20_DataDrivenFramework.DDFLoginTest"/>
+            <class name="com.krafttecnologies.tests.day20_DataDrivenFramework.DDFLoginTest_2"/>
         </classes>
 
     </test>

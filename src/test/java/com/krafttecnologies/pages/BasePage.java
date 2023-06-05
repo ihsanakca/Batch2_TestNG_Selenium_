@@ -3,30 +3,34 @@ package com.krafttecnologies.pages;
 import com.krafttecnologies.utilities.BrowserUtils;
 import com.krafttecnologies.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
+    WebDriver driver=Driver.get();
     public BasePage() {
-        PageFactory.initElements(Driver.get(), this);
+        PageFactory.initElements(driver, this);
     }
 
     public void navigateToModule(String tab, String module) {
-        String tabLocator = "//li[@class='nav-item']//span[.='" + tab + "']";
+        String tabLocator = "//ul[@class='d-flex align-items-center']//span[.='"+tab+"']";
+
         String moduleLocator = "//span[.='" + module + "']";
 
         BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
-        WebElement tabElement = Driver.get().findElement(By.xpath(tabLocator));
+        WebElement tabElement = driver.findElement(By.xpath(tabLocator));
         tabElement.click();
         if (!module.isEmpty()) {
             BrowserUtils.waitForClickablility(By.xpath(moduleLocator), 5);
-            Driver.get().findElement(By.xpath(moduleLocator)).click();
+            driver.findElement(By.xpath(moduleLocator)).click();
         }
 
     }
 
     public String subTitle(String subtitle) {
-        String subTitleLocator = "//h1[.='" + subtitle + "']";
+        String subTitleLocator = "(//li[.='"+subtitle+"'])[2]";
+
 
         BrowserUtils.waitForPresenceOfElement(By.xpath(subTitleLocator), 5);
 

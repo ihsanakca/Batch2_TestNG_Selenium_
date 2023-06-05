@@ -1,23 +1,42 @@
 package com.krafttecnologies.tests.day22_WriteToExcel;
 
+import org.apache.poi.xssf.streaming.SXSSFCell;
+import org.apache.poi.xssf.streaming.SXSSFRow;
+import org.apache.poi.xssf.streaming.SXSSFSheet;
+import org.apache.poi.xssf.streaming.SXSSFWorkbook;
+import org.testng.annotations.Test;
+
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class TheMultiplicationTable {
-    WriteToExcel obj=new WriteToExcel();
+    public SXSSFWorkbook workbook;
+    public SXSSFSheet sheet;
+    public SXSSFRow row;
+    public SXSSFCell cell;
 
-    public static void main(String[] args) {
+    public void writeToExcel(String path,String sheetName) throws IOException {
 
-    }
-    public void multiplicationTable() throws IOException {
-        for (int i = 0; i <=10; i++) {
-            for (int j = 0; j <=10 ; j++) {
+        FileOutputStream outputExcelFile = new FileOutputStream(path);
 
-                int result=i*j;
-                String result1=Integer.toString(result);
-                obj.writeToExcel("Sayfa1",result1,i,j);
-                //System.out.print(result+"\t");
+        workbook = new SXSSFWorkbook();
+        sheet = workbook.createSheet(sheetName);
+
+        for (int i = 0; i <10; i++) {
+            row = sheet.createRow(i);
+            for (int j = 0; j <10 ; j++) {
+                cell = row.createCell(j);
+                String result=Integer.toString((i+1)*(j+1));
+                cell.setCellValue((i+1)+"*"+(j+1)+"="+result);
+
             }
-           // System.out.println();
         }
+        workbook.write(outputExcelFile);
+        outputExcelFile.close();
+    }
+
+    @Test
+    public void testWriteToExcel() throws IOException {
+        writeToExcel("src/test/resources/deneme.xlsx","Sheet1");
     }
 }

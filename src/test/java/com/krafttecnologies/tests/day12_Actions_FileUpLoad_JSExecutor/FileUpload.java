@@ -2,8 +2,10 @@ package com.krafttecnologies.tests.day12_Actions_FileUpLoad_JSExecutor;
 
 import com.krafttecnologies.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -37,6 +39,7 @@ public class FileUpload {
         Thread.sleep(2000);
 
         Assert.assertTrue(actualText.contains(expectedText),"FAIL");
+        System.out.println("chooseFile.getLocation() = " + chooseFile.getLocation());
     }
     @Test
     public void uploadFile2() throws InterruptedException {
@@ -70,5 +73,30 @@ public class FileUpload {
         Thread.sleep(2000);
 
         Assert.assertTrue(actualText.contains(expectedText),"FAIL");
+    }
+    @Test
+    public void highlightTest() throws InterruptedException {
+        driver.get("https://demoqa.com/upload-download");
+
+        WebElement chooseFile=driver.findElement(By.id("uploadFile"));
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", chooseFile);
+        Thread.sleep(3000);
+
+    }
+    @Test
+    public void highlightTest2() throws InterruptedException {
+        driver.get("https://www.instructure.com/canvas/login/free-for-teacher");
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("startmaximized");
+
+
+
+        WebElement searchBar=driver.findElement(By.xpath("//p[text()='Log In to Your Canvas Account']"));
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", searchBar);
+        Thread.sleep(3000);
+
     }
 }

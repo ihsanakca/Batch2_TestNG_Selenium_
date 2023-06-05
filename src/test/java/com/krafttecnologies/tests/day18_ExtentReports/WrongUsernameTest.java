@@ -9,12 +9,14 @@ import org.testng.annotations.Test;
 
 public class WrongUsernameTest extends TestBase {
 
+
     @Test
-    public void wrongUsername(){
-        LoginPages loginPages=new LoginPages();
+    public void wrongUsername() {
 
-        extentLogger=report.createTest("Wrong Username Test");
+        extentLogger = report.createTest("Wrong Username Test");
 
+
+        LoginPages loginPages = new LoginPages();
         BrowserUtils.waitFor(1);
 
         extentLogger.info("Enter Wrong Username");
@@ -26,24 +28,23 @@ public class WrongUsernameTest extends TestBase {
         extentLogger.info("Click login button");
         loginPages.submitButton_loc.click();
 
-        String actualMessage=loginPages.warningMessage_loc.getText();
+        String actualMessage = loginPages.warningMessage_loc.getText();
 
         extentLogger.info("Verify that NOT log in");
 
-        Assert.assertEquals(actualMessage,"Email address or password is incorrect. Please check");
-//        Assert.assertEquals(actualMessage,"AAAil address or password is incorrect. Please check");
+        Assert.assertEquals(actualMessage, "Email address is incorrect. Please check");
 
         extentLogger.pass("PASSED");
 
     }
 
     @Test
-    public void wrongPassword(){
+    public void wrongPassword() {
 
-        LoginPages loginPages=new LoginPages();
+        extentLogger = report.createTest("Wrong Password Test");
 
-        extentLogger=report.createTest("Wrong Password Test");
 
+        LoginPages loginPages = new LoginPages();
         BrowserUtils.waitFor(1);
 
         extentLogger.info("Enter correct Username");
@@ -55,15 +56,13 @@ public class WrongUsernameTest extends TestBase {
         extentLogger.info("Click login button");
         loginPages.submitButton_loc.click();
 
-        String actualMessage=loginPages.warningMessage_loc.getText();
+        String actualMessage = loginPages.warningMessage_loc.getText();
 
         extentLogger.info("Verify that NOT log in");
 
-       Assert.assertEquals(actualMessage,"Email address or password is incorrect. Please check");
-//        Assert.assertEquals(actualMessage,"AAA address or password is incorrect. Please check");
+        Assert.assertEquals(actualMessage, "Password is incorrect. Please check");
 
         extentLogger.pass("PASSED");
-
 
 
     }

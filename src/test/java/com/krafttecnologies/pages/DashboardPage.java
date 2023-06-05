@@ -38,9 +38,8 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//span[.='Modal']")
     public WebElement moduleLocator_loc;
 
-    @FindBy(xpath = "//a[@class='nav-link nav-profile d-flex align-items-center pe-0']")
+    @FindBy(xpath = "//span[@class='d-none d-md-block dropdown-toggle ps-2']")
     public WebElement getUserName_loc;
-
 
 
     public String dashboardPageTitle(String title){
@@ -63,6 +62,13 @@ public class DashboardPage extends BasePage{
     public String getUserName(){
         BrowserUtils.waitForVisibility(getUserName_loc,5);
         return getUserName_loc.getText();
+    }
+
+    public void logoutAndNavigateToLoginPage(){
+        navigateToModule(getUserName(),"Sign Out");
+        WebElement loginBtn = driver.findElement(By.xpath("//span[normalize-space()='Login']"));
+        BrowserUtils.waitForVisibility(loginBtn,5);
+        loginBtn.click();
     }
 
 }

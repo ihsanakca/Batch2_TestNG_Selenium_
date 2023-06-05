@@ -35,8 +35,8 @@ public class ExcelUtilPractice {
         //satır satır alalım
         for (Map<String,String> row:qaTeam3.getDataList()){
             System.out.println("row = " + row);
-
-            //2. satırı gertirelim
+        }
+            //3. satırı gertirelim
             System.out.println("dataList.get(2) = " + dataList.get(2));
 
             //satırın bir hücresindeki veriyi key ile alma
@@ -47,6 +47,6 @@ public class ExcelUtilPractice {
             String[][] dataArray= qaTeam3.getDataArray();
 
             System.out.println(Arrays.deepToString(dataArray));
-        }
+
     }
 }

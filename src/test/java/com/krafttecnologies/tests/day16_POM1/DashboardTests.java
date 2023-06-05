@@ -17,11 +17,11 @@ public class DashboardTests extends TestBase {
     public void navigateToTabAndModule() throws InterruptedException {
 
         loginPages.loginUser();
-        dasboardPage.navigateToModule("Components","Charts");
+        dasboardPage.navigateToModule("Forms","Radio");
 
-        String actualSubTitleText=dasboardPage.subTitle("Charts");
+        String actualSubTitleText=dasboardPage.subTitle("Radio");
 
-        Assert.assertEquals(actualSubTitleText,"Charts","FAIL");
+        Assert.assertEquals(actualSubTitleText,"Radio","FAIL");
 
         Thread.sleep(3000);
     }

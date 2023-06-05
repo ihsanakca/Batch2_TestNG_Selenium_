@@ -3,9 +3,10 @@ package com.krafttecnologies.tests.day21_QR_Code;
 import com.google.zxing.*;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
-import com.krafttecnologies.tests.TestBase;
 import com.krafttecnologies.utilities.BrowserUtils;
+import com.krafttecnologies.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,10 +15,13 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
-public class QR_Test extends TestBase {
-
+public class QR_Test  {
+    WebDriver driver;
     @Test
     public void qrCodeTest() throws IOException, NotFoundException {
+
+        driver= Driver.get();
+        driver.get("https://goqr.me/");
         String urlText="https://www.google.com/";
         driver.findElement(By.xpath("//textarea[@id='qrcode-field-text-text']")).sendKeys(urlText);
         BrowserUtils.waitFor(3);
@@ -36,5 +40,7 @@ public class QR_Test extends TestBase {
         System.out.println("textResult = " + textResult);
         driver.get(textResult);
         Assert.assertEquals(driver.getCurrentUrl(),urlText,"QR code control");
+
+        driver.quit();
     }
 }

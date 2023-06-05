@@ -1,17 +1,12 @@
 package com.krafttecnologies.pages;
 
 import com.krafttecnologies.utilities.ConfigurationReader;
-import com.krafttecnologies.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class LoginPages extends BasePage{
 
-    public LoginPages(){
 
-        PageFactory.initElements(Driver.get(),this);
-    }
 
     @FindBy(name = "email")
     public WebElement userEmailInput_loc;
@@ -22,7 +17,7 @@ public class LoginPages extends BasePage{
     @FindBy(xpath ="//button[@type='submit']")
     public WebElement submitButton_loc;
 
-    @FindBy(xpath ="//*[contains(text(),'Email address or pass')]" )
+    @FindBy(xpath ="//*[contains(text(),'incorrect')]" )
     public WebElement warningMessage_loc;
 
     public void loginUser(){

@@ -23,6 +23,8 @@ public class CloseAndQuit {
         driver.get("https://www.facebook.com/");
 
         System.out.println("driver.manage().window().getSize() = " + driver.manage().window().getSize());
+        driver.manage().window().maximize();
+        Thread.sleep(2000);
         System.out.println("driver.manage().window().getPosition() = " + driver.manage().window().getPosition());
 
         driver.manage().window().setPosition(new Point(15,15));

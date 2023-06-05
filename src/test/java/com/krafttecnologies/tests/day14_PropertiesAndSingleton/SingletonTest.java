@@ -29,7 +29,7 @@ public class SingletonTest {
 //        WebDriver driver = WebDriverFactory.getDriver("chrome");
         WebDriver driver= Driver.get();
         driver.get("https://www.google.com.tr/");
-//        Driver.closeDriver();
+        Driver.closeDriver();
     }
 
     @Test
@@ -37,5 +37,8 @@ public class SingletonTest {
 //        WebDriver driver = WebDriverFactory.getDriver("chrome");
         WebDriver driver= Driver.get();
         driver.get("https://www.amazon.com.tr/");
+       Driver.closeDriver();
+        driver=Driver.get();
+        driver.get("https://www.google.com.tr/");
     }
 }

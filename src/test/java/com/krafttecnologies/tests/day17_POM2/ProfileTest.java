@@ -16,13 +16,18 @@ public class ProfileTest extends TestBase {
 
     @Test
     public void editProfile() {
+        loginPages = new LoginPages();
+        dasboardPage = new DashboardPage();
+        profilePage = new ProfilePage();
+
         loginPages.loginUser();
-        dasboardPage.myProfile_loc.click();
+        //dasboardPage.myProfile_loc.click();
+        dasboardPage.navigateToModule("Selim Gezer","My Profile");
         profilePage.profileTabs("Edit Profile");
 
 
         profilePage.fullName.clear();
-        profilePage.fullName.sendKeys("Robinson Crusoe");
+        profilePage.fullName.sendKeys("Selim Gezer");
 
         profilePage.about.sendKeys("Some words are here...");
 
@@ -54,8 +59,13 @@ public class ProfileTest extends TestBase {
 
     @Test
     public void addExperience(){
+        loginPages = new LoginPages();
+        dasboardPage = new DashboardPage();
+        profilePage = new ProfilePage();
+
         loginPages.loginUser();
-        dasboardPage.myProfile_loc.click();
+      //  dasboardPage.myProfile_loc.click();
+        dasboardPage.navigateToModule("Selim Gezer","My Profile");
         profilePage.profileTabs("Add Experience");
 
         profilePage.jobTitle.clear();
@@ -76,8 +86,8 @@ public class ProfileTest extends TestBase {
         profilePage.jobDescription.clear();
         profilePage.jobDescription.sendKeys("junior tester");
 
-//        profilePage.addExperienceBtn.clear();
-        BrowserUtils.clickWithJS(profilePage.addExperienceBtn);
+      profilePage.addExperienceBtn.click();
+     //   BrowserUtils.clickWithJS(profilePage.addExperienceBtn);
 
         BrowserUtils.waitFor(3);
     }

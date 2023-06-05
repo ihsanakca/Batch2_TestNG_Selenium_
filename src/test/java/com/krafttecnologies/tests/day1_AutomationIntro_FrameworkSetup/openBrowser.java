@@ -1,8 +1,11 @@
 package com.krafttecnologies.tests.day1_AutomationIntro_FrameworkSetup;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class openBrowser {
 
@@ -13,14 +16,14 @@ public class openBrowser {
     3.Driver a testini yapacağımız web sayfasına bizi götürmesini isteyeceğiz...
  */
 
-
-
         WebDriverManager.chromedriver().setup();
 
         WebDriver driver=new ChromeDriver();
 
+
+
         driver.get("https://www.krafttechnologie.com/");
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
 
         System.out.println("driver.getTitle() = " + driver.getTitle());
 
@@ -33,5 +36,21 @@ public class openBrowser {
         }else {
             System.out.println("Başlık beklendiği gibi GELMEDİ. Doğrulama GEÇMEDİ.");
         }
+
+        System.out.println("driver.manage().window().getSize() = " + driver.manage().window().getSize());
+        System.out.println("driver.manage().window().getPosition() = " + driver.manage().window().getPosition());
+
+        driver.manage().window().setPosition(new Point(15,35));
+
+        driver.manage().window().setSize(new Dimension(900,600));
+
+        System.out.println("driver.manage().window().getSize() = " + driver.manage().window().getSize());
+        System.out.println("driver.manage().window().getPosition() = " + driver.manage().window().getPosition());
+
+
+        WebDriverManager.edgedriver().setup();
+
+        WebDriver driver1=new EdgeDriver();
+        driver1.get("https://www.google.com");
     }
 }

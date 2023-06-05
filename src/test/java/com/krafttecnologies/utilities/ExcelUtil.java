@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
+/**
  * Excell dosyalarini okumak ve yazmak icin
  * ihtiyac duyulan metodlari bulundurur.
  *  xls ve xlsx uzantili file larda kullanilir.
@@ -89,7 +89,7 @@ public class ExcelUtil {
             // get each row
             Row row = workSheet.getRow(i);
             // create map of the row using the column and value
-            // column map key, cell value --> map bvalue
+            // column map key, cell value --> map value
             Map<String, String> rowMap = new HashMap<String, String>();
             for (Cell cell : row) {
                 int columnIndex = cell.getColumnIndex();
